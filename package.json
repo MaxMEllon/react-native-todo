@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "agreed": "^3.1.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "^4.19.1",
@@ -17,6 +18,7 @@
   "scripts": {
     "start": "react-native start --port 4000",
     "android": "react-native run-android",
+    "agreed": "agreed-server --path ./spec/agreed/entry.js --port 8080 --static ./public",
     "ios": "react-native run-ios --port 4000",
     "fmt": "prettier --write src/**/*.js",
     "test": "jest"
@@ -25,9 +27,11 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "16.3.1",
     "react-native": "~0.55.2",
-    "react-native-elements": "^1.0.0-beta5",
+    "react-native-elements": "^0.19.1",
+    "react-native-spinkit": "^1.1.1",
     "react-native-vector-icons": "^4.6.0",
     "styled-components": "^3.2.6"
   }
