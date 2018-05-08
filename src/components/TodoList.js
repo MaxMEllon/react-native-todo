@@ -16,19 +16,19 @@ export default class TodoList extends React.Component {
     this.state = {
       loading: true,
       todos: null,
-      checked: [],
+      checked: []
     }
   }
 
   componentDidMount() {
     axios
       .get('http://localhost:8080/todos')
-      .then(res => (
+      .then(res =>
         this.setState({
           todos: res.data.todos,
-          checked: range(0, res.data.todos.length, false),
+          checked: range(0, res.data.todos.length, false)
         })
-      ))
+      )
       .catch(err => alert(err))
     setTimeout(() => this.setState({ loading: false }), 2000)
   }
@@ -36,45 +36,43 @@ export default class TodoList extends React.Component {
   onCheck(index) {
     const newChecked = Object.assign([], this.state.checked)
     newChecked[index] = !newChecked[index]
-    this.setState({ checked: newChecked, })
+    this.setState({ checked: newChecked })
   }
 
   render() {
     const isLoading = this.state.todos === null || this.state.loading
-    if (isLoading) return (
-      <Spinner
-        style={{
-          marginTop: 230,
-          marginBottom: 50,
-          marginLeft: '38%',
-
-        }}
-        isVisible={isLoading}
-        size={100}
-        type={'Wave'}
-        color={'#555'}
-      />
-    )
+    if (isLoading)
+      return (
+        <Spinner
+          style={{
+            marginTop: 230,
+            marginBottom: 50,
+            marginLeft: '38%'
+          }}
+          isVisible={isLoading}
+          size={100}
+          type={'Wave'}
+          color={'#555'}
+        />
+      )
     return (
       <List>
-        {
-          this.state.todos.map((todo, index) => (
-            <ListItem
-              leftIcon={
-                <CheckBox
-                  containerStyle={{
-                    width: 45,
-                    height: 45,
-                  }}
-                  onPress={() => this.onCheck(index)}
-                  checked={this.state.checked[index]}
-                />
-              }
-              key={todo.id}
-              title={todo.message}
-            />
-          ))
-        }
+        {this.state.todos.map((todo, index) => (
+          <ListItem
+            leftIcon={
+              <CheckBox
+                containerStyle={{
+                  width: 45,
+                  height: 45
+                }}
+                onPress={() => this.onCheck(index)}
+                checked={this.state.checked[index]}
+              />
+            }
+            key={todo.id}
+            title={todo.message}
+          />
+        ))}
       </List>
     )
   }

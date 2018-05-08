@@ -1,3 +1,1 @@
-module.exports = [
-  './todos/get.json5',
-]
+module.exports = ['./todos/get.json5']
