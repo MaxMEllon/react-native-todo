@@ -57,22 +57,24 @@ export default class TodoList extends React.Component {
       )
     return (
       <List>
-        {this.state.todos.map((todo, index) => (
-          <ListItem
-            leftIcon={
-              <CheckBox
-                containerStyle={{
-                  width: 45,
-                  height: 45
-                }}
-                onPress={() => this.onCheck(index)}
-                checked={this.state.checked[index]}
-              />
-            }
-            key={todo.id}
-            title={todo.message}
-          />
-        ))}
+        <ScrollView>
+          {this.state.todos.map((todo, index) => (
+            <ListItem
+              leftIcon={
+                <CheckBox
+                  containerStyle={{
+                    width: 45,
+                    height: 45
+                  }}
+                  onPress={() => this.onCheck(index)}
+                  checked={this.state.checked[index]}
+                />
+              }
+              key={todo.id}
+              title={todo.message}
+            />
+          ))}
+        </ScrollView>
       </List>
     )
   }
