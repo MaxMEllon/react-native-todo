@@ -2,19 +2,6 @@
   "name": "todo-sample",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "agreed": "^3.1.0",
-    "babel-eslint": "^8.2.3",
-    "babel-preset-react-native-stage-0": "^1.0.1",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "jest": "^22.4.3",
-    "jest-react-native": "^18.0.0",
-    "prettier": "^1.12.1",
-    "react-test-renderer": "16.3.1"
-  },
   "scripts": {
     "start": "react-native start --port 4000",
     "android": "react-native run-android",
@@ -33,6 +20,24 @@
     "react-native-elements": "^0.19.1",
     "react-native-spinkit": "^1.1.1",
     "react-native-vector-icons": "^4.6.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-act": "^1.7.4",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
     "styled-components": "^3.2.6"
+  },
+  "devDependencies": {
+    "agreed": "^3.1.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
+    "jest-react-native": "^18.0.0",
+    "prettier": "^1.12.1",
+    "react-test-renderer": "16.3.1"
   }
 }
